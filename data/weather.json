@@ -1,0 +1,45 @@
+{
+  "coord": {
+    "lon": 121.53,
+    "lat": 25.05
+  },
+  "weather": [{
+    "id": 500,
+    "main": "Rain",
+    "description": "light rain",
+    "icon": "10d"
+  }, {
+    "id": 300,
+    "main": "Drizzle",
+    "description": "light intensity drizzle",
+    "icon": "09d"
+  }],
+  "base": "stations",
+  "main": {
+    "temp": 14,
+    "pressure": 1026,
+    "humidity": 87,
+    "temp_min": 14,
+    "temp_max": 14
+  },
+  "visibility": 6000,
+  "wind": {
+    "speed": 6.7,
+    "deg": 100
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1456466400,
+  "sys": {
+    "type": 1,
+    "id": 7479,
+    "message": 0.0099,
+    "country": "TW",
+    "sunrise": 1456438800,
+    "sunset": 1456480443
+  },
+  "id": 1668341,
+  "name": "Taipei",
+  "cod": 200
+}

@@ -1,0 +1,38 @@
+body {
+	padding: 5px;
+	font: normal 12px arial;
+}
+
+body * {
+	margin: 0px;
+	padding: 0px;
+}
+
+body div#menu {
+	width: 20%;
+	min-width: 130px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+body div#content {
+	width: 600px;
+	height: 400px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+body div ul li {
+	padding: 5px 5px 5px 20px;
+	border: 1px solid #c0c0c0;
+	cursor: pointer;
+}
+
+body div ul li.selected {
+	background-color: #e7ebff;
+	border-color: #2a9fcd;
+	font-weight: bold;
+}
+
+iframe {
+}

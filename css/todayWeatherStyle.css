@@ -1,0 +1,132 @@
+.todayWeather {
+}
+
+.todayWeather .title {
+  padding: 4px 0px;
+  font-size: 16px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 0px 0px 1px 0px;
+}
+
+.todayWeather .weather {
+  margin: 10px 0px;
+  position: relative;
+  padding: 10px;
+}
+
+.todayWeather .weather .error {
+  border: 1px solid red;
+}
+
+.todayWeather .weather .error .fa {
+  padding: 4px 0px 0px 0px;
+  color: red;
+  margin: 5px 0px;
+  padding: 0px 10px;
+}
+
+.todayWeather .weather .error label {
+  margin: 4px 0px 0px 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.todayWeather .weather .condition {
+  margin: 5px 0px;
+}
+
+.todayWeather .weather .city,
+.todayWeather .weather .country {
+  display: inline-block;
+  padding: 9px 10px;
+}
+
+.todayWeather .weather #search {
+  float: right;
+  border: none;
+  cursor: pointer;
+  background-color: #2196F3;
+  padding: 5px 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+.todayWeather .weather #search .fa {
+  padding: 4px 0px 0px 0px;
+}
+
+.todayWeather .weather #search label {
+  margin: 4px 0px 0px 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.todayWeather .weather .report .weather_icon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: url('../img/icons.png') no-repeat;
+  margin: 0px 60px;
+  background-position: -132px -508px;
+}
+
+.todayWeather .weather .report .weather_icon.cloud {
+  background-position: -61px -364px;
+}
+
+.todayWeather .weather .report .weather_icon.rain {
+  background-position: -278px -364px;
+}
+
+.todayWeather .weather .report .weather_icon.clear {
+  background-position: -61px -5px;
+}
+
+.todayWeather .weather .report .weather_status {
+  display: inline-block;
+  width: 180px;
+  height: 100px;
+  vertical-align: top;
+  padding-top: 20px;
+}
+
+.todayWeather .weather .report .weather_detail {
+  width: 300px;
+}
+
+.todayWeather .weather .report .weather_status .status,
+.todayWeather .weather .report .weather_status .desc {
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.todayWeather .weather .report .weather_status .status {
+  font-size: 28px;
+}
+
+.todayWeather .weather .report .weather_status .desc {
+  font-size: 16px;
+  color: #757575;
+}
+
+.todayWeather .weather .report .temperature,
+.todayWeather .weather .report .humidity,
+.todayWeather .weather .report .temperature_value,
+.todayWeather .weather .report .humidity_value {
+  display: inline-block;
+  width: 50%;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.todayWeather .weather .loading {
+  color: #2196F3;
+  position: absolute;
+  top: 80px;
+  left: 180px;
+}

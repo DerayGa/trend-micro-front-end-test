@@ -1,0 +1,75 @@
+.dataAnalysis {
+}
+
+.dataAnalysis .title {
+	padding: 4px 0px;
+	font-size: 16px;
+	border-style: solid;
+	border-color: #000;
+	border-width: 0px 0px 1px 0px;
+}
+
+.dataAnalysis .chart {
+	margin: 10px 0px;
+	border: 2px solid #000;
+	position: relative;
+}
+
+.dataAnalysis .chart .chart_title,
+.dataAnalysis .chart .chart_desc {
+	padding: 4px 0px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.dataAnalysis .chart .chart_desc {
+	font-size: 10px;
+}
+
+.dataAnalysis .chart .chart_legend,
+.dataAnalysis .chart .chart_legend .legends {
+	display: inline-block;
+	width: 76px;
+	height: 250px;
+	vertical-align: top;
+}
+
+.dataAnalysis .chart .chart_legend .legends {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.dataAnalysis .chart .chart_legend .legends .legend {
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	text-align: left;
+	margin: 3px 0px;
+}
+
+.dataAnalysis .chart .chart_legend .legends .fa {
+	margin-top: 5px;
+}
+
+.dataAnalysis .chart .chart_legend .legends .label {
+	display: inline-block;
+	vertical-align: top;
+	margin: 9px 0px 0px 8px;
+}
+
+.dataAnalysis .chart #line_chart {
+	padding: 4px 0px;
+	margin-left: 20px;
+}
+
+.dataAnalysis .chart #menu {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 24px;
+	height: 24px;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
