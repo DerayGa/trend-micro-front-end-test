@@ -12,7 +12,8 @@ github.io run under HTTPS, but [openweathermap API](https://openweathermap.org/a
 
 ![How to fixed](https://raw.githubusercontent.com/DerayGa/trend-micro-front-end-test/master/img/how-to-fixed-mixed-content.png)
 
-* Click "Load unsafe script" from popup dialog
+* Click "Load unsafe script" from popup dialog  
+
 ![Load unsafe script](https://raw.githubusercontent.com/DerayGa/trend-micro-front-end-test/master/img/load-unsafe-script.png)
 
 ## requirement
