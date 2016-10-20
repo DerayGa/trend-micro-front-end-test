@@ -92,7 +92,7 @@
 }
 
 .todayWeather .weather .report .weather_detail {
-  width: 300px;
+
 }
 
 .todayWeather .weather .report .weather_status .status,
@@ -122,6 +122,9 @@
   height: 40px;
   font-size: 18px;
   line-height: 40px;
+  float:left;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .todayWeather .weather .loading {

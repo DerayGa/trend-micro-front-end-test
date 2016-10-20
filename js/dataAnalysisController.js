@@ -14,13 +14,14 @@ LineChart.prototype = {
   _step: 10000,
 
   init: function() {
-    this.dom = {};
-    this.dom.root = document.createElement('div');
-    this.dom.title = $('<div class="chart_title"></div>');
-    this.dom.desc = $('<div class="chart_desc"></div>');
-    this.dom.menu = $('<button id="menu"><i class="fa fa-align-justify fa-2x"></i></button>');
-    this.dom.chart = $('<canvas id="line_chart" width="500px" height="250px"></canvas>');
-    this.dom.legends = $('<div class="legends"></div>');
+    this.dom = {
+      root: document.createElement('div'),
+      title: $('<div class="chart_title"></div>'),
+      desc: $('<div class="chart_desc"></div>'),
+      menu: $('<button id="menu"><i class="fa fa-align-justify fa-2x"></i></button>'),
+      chart: $('<canvas id="line_chart" width="500px" height="250px"></canvas>'),
+      legends: $('<div class="legends"></div>'),
+    };
 
     $(this.dom.root).addClass('chart')
       .append([this.dom.title, this.dom.desc, this.dom.menu, this.dom.chart])

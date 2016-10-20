@@ -12,25 +12,31 @@ Weather.prototype = {
   _icons: ['cloud', 'rain', 'clear'],
 
   init: function() {
-    this.dom = {};
-    this.dom.root = document.createElement('div');
-    this.dom.error = $('<div class="error"><i class="fa fa-close"></i><label></label></div>');
-    this.dom.condition = $('<div class="condition"></div>');
+    this.dom = {
+      root: document.createElement('div'),
+      error: $('<div class="error"><i class="fa fa-close"></i><label></label></div>'),
+      condition: $('<div class="condition"></div>'),
 
-    this.dom.city = $('<div class="city">City:</div>');
-    this.dom.country = $('<div class="country">Country:</div>');
-    this.dom.cityInput = $('<input id="city" type="text" value="Taipei"></input>');
-    this.dom.countryInput = $('<input id="country" type="text" value="TW"></input>');
-    this.dom.search = $('<button id="search"><i class="fa fa-search"></i><label>Search</label></button>');
-    this.dom.report = $('<div class="report"></div>');
-    this.dom.loading = $('<div class="fa fa-hourglass-half fa-5x loading"></div>');
+      city: $('<div class="city">City:</div>'),
+      country: $('<div class="country">Country:</div>'),
+      cityInput: $('<input id="city" type="text" value="Taipei"></input>'),
+      countryInput: $('<input id="country" type="text" value="TW"></input>'),
+      search: $('<button id="search"><i class="fa fa-search"></i><label>Search</label></button>'),
+      report: $('<div class="report"></div>'),
+      loading: $('<div class="fa fa-hourglass-half fa-5x loading"></div>'),
 
-    this.dom.weatherIcon = $('<div class="weather_icon"></div>');
-    this.dom.weatherStatus = $('<div class="weather_status">' +
-      '<div class="status"></div><div class="desc"></div></div>');
-    this.dom.weatherDetail = $('<div class="weather_detail">' +
-      '<div class="temperature">Temperature:</div><div class="temperature_value"></div>' +
-      '<div class="humidity">Humidity:</div><div class="humidity_value"></div></div>');
+      weatherIcon: $('<div class="weather_icon"></div>'),
+      weatherStatus: $(`<div class="weather_status">
+                          <div class="status"></div>
+                          <div class="desc"></div>
+                        </div>`),
+      weatherDetail: $(`<div class="weather_detail">
+                          <div class="temperature">Temperature:</div>
+                          <div class="temperature_value"></div>
+                          <div class="humidity">Humidity:</div>
+                          <div class="humidity_value"></div>
+                        </div>`),
+    };
 
     $(this.dom.root).addClass('weather')
       .append([this.dom.error, this.dom.condition, this.dom.report, this.dom.loading]);
@@ -87,25 +93,18 @@ Weather.prototype = {
     const api = this._api.replace('{Q}', this.getLocationString())
       .replace('{APPID}', this._appid);
 
-    $.ajax({
-      url: api,
-      dataType: 'json',
-      success: (function(data) {
+    fetch(api)
+      .then(function(response) {
+        return response.json()
+      }).then(function(data) {
         this._data = data;
         //settimeout to see loading effect
         window.setTimeout(this.parse.bind(this), 750)
         //this.parse();
-      }).bind(this),
-      error: (function(data) {
-        console.log(data)
-        this._data = (data.responseText)
-          ? JSON.parse(data.responseText)
-          : null;
-        //settimeout to see loading effect
-        window.setTimeout(this.parse.bind(this), 750)
-        //this.parse();
-      }).bind(this)
-    });
+      }.bind(this)).catch(function(ex) {
+        console.log(ex);
+        this.onError();
+      }.bind(this));
   },
 
   parse: function() {
@@ -154,8 +153,7 @@ Weather.prototype = {
 
     $('label', this.dom.error).html(message);
     $(this.dom.error).fadeIn();
-    $(this.dom.report).fadeOut();
-    $(this.dom.loading).fadeOut();
+    $([this.dom.report, this.dom.loading]).fadeOut();
   },
 }
 
